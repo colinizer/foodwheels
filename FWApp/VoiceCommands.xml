@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-ca" Name="AdventureWorksCommandSet_en-ca">
+    <AppName>Food Wheels</AppName>
+    <Example> Show Food Wheels open today </Example>
+
+    <Command Name="showOpening">
+      <Example> Show food trucks </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> show food trucks </ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified"> show {builtin:AppName} [trucks] </ListenFor>
+      <Feedback> Showing trucks open today </Feedback>
+      <Navigate />
+    </Command>
+
+    <Command Name="showTruckType">
+      <Example> Show me Mexican Food Wheels </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> show me [a] {foodtype} truck </ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> show me a truck selling {foodtype} food </ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified"> show me {foodtype} {builtin:AppName} </ListenFor>
+      <Feedback> Looking for a truck serving {foodtype}</Feedback>
+      <Navigate />
+    </Command>
+
+    <PhraseTopic Label="foodtype" Scenario="Search">
+
+    </PhraseTopic>
+  </CommandSet>
+  <CommandSet xml:lang="en-us" Name="AdventureWorksCommandSet_en-us">
+    <AppName>Food Wheels</AppName>
+    <Example> Show Food Wheels open today </Example>
+
+    <Command Name="showOpening">
+      <Example> Show food trucks </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> show [me] food trucks </ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified"> show {builtin:AppName} [trucks] </ListenFor>
+      <Feedback> Showing trucks open today </Feedback>
+      <Navigate />
+    </Command>
+
+    <Command Name="showTruckType">
+      <Example> Show me Mexican Food Wheels </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> show me [a] {foodtype} truck </ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> show [me] a truck selling {foodtype} [food] </ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> show [me] a truck serving {foodtype} [food] </ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified"> show me {foodtype} {builtin:AppName} </ListenFor>
+      <Feedback> Looking for a truck serving {foodtype}</Feedback>
+      <Navigate />
+    </Command>
+
+    <PhraseTopic Label="foodtype" Scenario="Search">
+
+    </PhraseTopic>
+  </CommandSet>
+</VoiceCommands>

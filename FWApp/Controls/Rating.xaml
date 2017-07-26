@@ -1,0 +1,48 @@
+﻿<UserControl
+    x:Class="FWApp.Controls.Rating"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FWApp.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="UC"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <Viewbox Stretch="Uniform">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Viewbox Width="100">
+                    <Grid Width="5">
+                        <Viewbox Width="5">
+                            <StackPanel Orientation="Horizontal">
+                                <FontIcon Margin="0" FontFamily="Segoe MDL2 Assets" Foreground="LightGray" Glyph="&#xE734;" Tapped="FontIcon_Tapped" Tag="1"/>
+                                <FontIcon Margin="0" FontFamily="Segoe MDL2 Assets" Foreground="LightGray" Glyph="&#xE734;" Tapped="FontIcon_Tapped" Tag="2"/>
+                                <FontIcon Margin="0" FontFamily="Segoe MDL2 Assets" Foreground="LightGray" Glyph="&#xE734;" Tapped="FontIcon_Tapped" Tag="3"/>
+                                <FontIcon Margin="0" FontFamily="Segoe MDL2 Assets" Foreground="LightGray" Glyph="&#xE734;" Tapped="FontIcon_Tapped" Tag="4"/>
+                                <FontIcon Margin="0" FontFamily="Segoe MDL2 Assets" Foreground="LightGray" Glyph="&#xE734;" Tapped="FontIcon_Tapped" Tag="5"/>
+                            </StackPanel>
+                        </Viewbox>
+                        <Grid Width="{Binding Value,ElementName=UC, FallbackValue=3}" HorizontalAlignment="Left" IsHitTestVisible="False">
+                            <Viewbox Width="5">
+                                <StackPanel Orientation="Horizontal">
+                                    <FontIcon Margin="0" FontFamily="Segoe MDL2 Assets" Foreground="{StaticResource MenuBackground}" Glyph="&#xE735;"/>
+                                    <FontIcon Margin="0" FontFamily="Segoe MDL2 Assets" Foreground="{StaticResource MenuBackground}" Glyph="&#xE735;"/>
+                                    <FontIcon Margin="0" FontFamily="Segoe MDL2 Assets" Foreground="{StaticResource MenuBackground}" Glyph="&#xE735;"/>
+                                    <FontIcon Margin="0" FontFamily="Segoe MDL2 Assets" Foreground="{StaticResource MenuBackground}" Glyph="&#xE735;"/>
+                                    <FontIcon Margin="0" FontFamily="Segoe MDL2 Assets" Foreground="{StaticResource MenuBackground}" Glyph="&#xE735;"/>
+                                </StackPanel>
+                            </Viewbox>
+                        </Grid>
+                    </Grid>
+                </Viewbox>
+                <TextBlock Grid.Column="1" Margin="8,0,0,0" Text="{Binding ValueText, ElementName=UC, FallbackValue=0.0}" FontSize="20" VerticalAlignment="Center"/>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</UserControl>

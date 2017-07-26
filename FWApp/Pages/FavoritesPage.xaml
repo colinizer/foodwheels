@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="FWApp.Pages.FavoritesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FWApp.Pages"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"    
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ItemsControl x:Name="IC" ItemsPanel="{StaticResource WrapGrid320}" ItemsSource="{Binding Favorites}">
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <ScrollViewer>
+                        <ItemsPresenter/>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="Tapped">
+                                <core:EventTriggerBehavior.Actions>
+                                    <core:InvokeCommandAction Command="{Binding MainVM.SelectTruckCommand, Source={StaticResource VML}}" CommandParameter="{Binding Id}"/>
+                                </core:EventTriggerBehavior.Actions>
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+
+                        <RelativePanel Margin="8" BorderBrush="{StaticResource Edging}" BorderThickness="2">
+                            <Image Margin="8" x:Name="Pic" Width="240" Height="135" Stretch="Uniform" Source="{Binding ImageUrl}"/>
+                            <TextBlock x:Name="Title" Margin="8" Text="{Binding Title}" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="Wrap" RelativePanel.Below="Pic"/>
+                        </RelativePanel>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</Page>
