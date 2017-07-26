@@ -18,7 +18,7 @@ Note, you will not see the graphical assets seen in the training video since thi
 - add those assets under FWWebService\Content\TruckImages
 - update the fixed array of data in FWWebService\Models\TruckDataService.cs to point to the files you license of course, if you have a license to Fotolia you can get the assets referenced in TruckDataService.cs
 - comment out the code indicated at the end of InitData() in FWWebService\Models\TruckDataService.cs
-- 
+
 App publishing
 - If you want to publish an app you will need to: 
 - Start creating app in developer centre Associate app with store app
