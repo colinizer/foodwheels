@@ -15,10 +15,10 @@ Running the app
 
 Note that the truck data is simulated in FWWebService. It is held in memory and random truck openings are added when the webservice instance starts up.
 Note, you will not see the graphical assets seen in the training video since this were specifically licensed for use in the video. You will see basic text images for a truck and dish. If you want that functionality, you will need to: 
-add those assets under FWWebService\Content\TruckImages
-update the fixed array of data in FWWebService\Models\TruckDataService.cs to point to the files you license of course, if you have a license to Fotolia you can get the assets referenced in TruckDataService.cs
-comment out the code indicated at the end of InitData() in FWWebService\Models\TruckDataService.cs
-
+- add those assets under FWWebService\Content\TruckImages
+- update the fixed array of data in FWWebService\Models\TruckDataService.cs to point to the files you license of course, if you have a license to Fotolia you can get the assets referenced in TruckDataService.cs
+- comment out the code indicated at the end of InitData() in FWWebService\Models\TruckDataService.cs
+- 
 App publishing
 - If you want to publish an app you will need to: 
 - Start creating app in developer centre Associate app with store app
