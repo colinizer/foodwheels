@@ -6,7 +6,7 @@ You can access the video course through a [Safari subscription](https://colinize
 
 Note that not all platform features from course lessons are demonstrated in the app - see the sub-lessons for those features
 
-Running the app
+**Running the app**
 - To get the app running:
 - Download the code Open the solution file with VS 2015 Update 3
 - Make sure Debug x86 is selected for the build
@@ -19,7 +19,7 @@ Note, you will not see the graphical assets seen in the training video since thi
 - update the fixed array of data in FWWebService\Models\TruckDataService.cs to point to the files you license of course, if you have a license to Fotolia you can get the assets referenced in TruckDataService.cs
 - comment out the code indicated at the end of InitData() in FWWebService\Models\TruckDataService.cs
 
-App publishing
+**App publishing**
 - If you want to publish an app you will need to: 
 - Start creating app in developer centre Associate app with store app
 - Add graphical assets
